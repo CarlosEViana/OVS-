@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OVS Massagens Terapêuticas e Serviço de Estetica </title>
+  <style>
+    /* RESET básico */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #f5e6e0;
+      color: #4d3f36;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    /* ===========================
+       HEADER - BOTÕES NO TOPO
+       =========================== */
+    header {
+      background-color: #d9b8a6;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 15px;
+      border-radius: 12px;
+      margin-bottom: 40px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    header a.btn-topo {
+      background-color: #d9b8a6;
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    header a.btn-topo.whatsapp {
+      background-color: #25D366;
+    }
+
+    header a.btn-topo.maps {
+      background-color: #4285F4;
+    }
+
+    header a.btn-topo.instagram:hover {
+      background-color: #fc000d;
+    }
+
+  .instagram {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  color: white !important;
+}
+    
+    header a.btn-topo.whatsapp:hover {
+      background-color: #1ebe5b;
+    }
+
+    header a.btn-topo.maps:hover {
+      background-color: #357ae8;
+    }
+
+    /* ===========================
+       SESSÃO DE APRESENTAÇÃO
+       =========================== */
+    .apresentacao {
+      background-image: url('fundodecima.jpg'); /* Troque para a imagem desejada */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 60px 30px;
+      border-radius: 24px;
+      color: white;
+      position: relative;
+      margin-bottom: 60px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    }
+
+    /* Camada escura para melhorar legibilidade */
+    .apresentacao::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0,0,0,0.45);
+      border-radius: 24px;
+      z-index: 0;
+    }
+
+    .container-apresentacao {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      z-index: 1;
+      flex-wrap: wrap;
+    }
+
+    .apresentacao-texto {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .apresentacao-texto h2 {
+      font-size: 40px;
+      margin-bottom: 20px;
+      color: #f7e5db;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    }
+
+    .apresentacao-texto p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #e4d6cc;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    }
+
+    .apresentacao-fotos {
+      flex: 1;
+      display: flex;
+      gap: 20px;
+      min-width: 280px;
+      justify-content: center;
+      flex-wrap: nowrap;
+    }
+
+    .apresentacao-fotos img {
+      height: 380px; /* Fotos maiores */
+      width: 45%;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+
+    
+
+    .apresentacao-fotos img:hover {
+      transform: scale(1.05);
+    }
+
+    /* ===========================
+       SEÇÃO SERVIÇOS -  GRID
+       =========================== */
+    .pagina-servicos {
+      max-width: 1200px;
+      margin: 0 auto 60px;
+      background-color: rgba(252, 249, 246, 0.95);
+      padding: 40px 30px;
+      border-radius: 24px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .pagina-servicos h2 {
+      text-align: center;
+      color: #6b4f3b;
+      margin-bottom: 40px;
+      font-size: 32px;
+    }
+
+    .servicos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .servico {
+      background-color: white;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+    }
+
+    .servico:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .servico img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .servico-content {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .servico h3 {
+      margin-bottom: 15px;
+      color: #a1745c;
+      font-size: 22px;
+    }
+
+    .servico p {
+      color: #444;
+      line-height: 1.5;
+      flex-grow: 1;
+      margin-bottom: 20px;
+    }
+
+    .valor {
+      font-weight: bold;
+      font-size: 18px;
+      color: #6b4f3b;
+    }
+
+    /* ===========================
+       RESPONSIVIDADE
+       =========================== */
+
+    @media (max-width: 900px) {
+      .container-apresentacao {
+        flex-direction: column;
+      }
+      .apresentacao-fotos img {
+        width: 100%;
+        height: 300px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      header a.btn-topo {
+        padding: 8px 15px;
+        font-size: 14px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ================== HEADER COM BOTOES NO TOPO ================== -->
+<header>
+  <a href="index.html" class="btn-topo">Início</a>
+  <a href="https://wa.me/5511982538941?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20Agendamento." target="_blank" class="btn-topo whatsapp">WhatsApp</a>
+  <a href="https://www.instagram.com/uniaodemaos" target="_blank" class="btn-topo instagram">Instagram</a>
+  <a href="https://maps.app.goo.gl/xZA9zJ9FpGyPbhhT7" target="_blank" class="btn-topo maps">Localização</a>
+</header>
+
+  <!-- ================== APRESENTAÇÃO DA SUA MÃE ================== -->
+  <section class="apresentacao">
+    <div class="container-apresentacao">
+      <div class="apresentacao-texto">
+        <h2>Conheça a Profissional</h2>
+        <p>Olá meu nome é Olga sou uma terapeuta dedicada,
+          Com 15 anos de experiência em massagens terapêuticas, que combina sensibilidade e técnica para proporcionar bem-estar e equilíbrio para todos que a procuram.
+          Seu trabalho é marcado pelo carinho e atenção, garantindo que cada sessão seja única e personalizada para as necessidades de cada cliente. </p>  
+      </div>
+      <div class="apresentacao-fotos">
+        <img src="foto1.jpg" alt="Foto da profissional 1" />
+        <img src="foto2.jpg" alt="Foto da profissional 2" />
+        <img src="foto3.jpg" alt="Foto da profissional 3" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ================== SERVIÇOS DISPONÍVEIS - GRID ================== -->
+  <section class="pagina-servicos">
+    <h2>Serviços Disponíveis!</h2>
+    <div class="servicos-grid">
+      <div class="servico">
+        <img src="massagem-relaxante.jpg" alt="Massagem relaxante" />
+        <div class="servico-content">
+          <h3>Massagem Relaxante</h3>
+          <p>Uma massagem suave e ritmada, feita com óleos e movimentos lentos para acalmar corpo e mente. Ideal para aliviar o estresse e melhorar o sono.</p>
+
+        </div>
+      </div>
+
+      <div class="servico">
+        <img src="massagem-terapeutica.jpg" alt="Massagem terapêutica" />
+        <div class="servico-content">
+          <h3>Massagem Desportiva</h3>
+          <p>Focada em dores específicas e rigidez muscular, essa técnica trabalha pontos profundos do corpo para restaurar a mobilidade, aliviar incômodos e equilibrar a energia vital.</p>
+
+        </div>
+      </div>
+            <div class="servico">
+        <img src="Nuru.jpg" alt="Massagem Nuru" />
+        <div class="servico-content">
+          <h3>Massagem Nuru</h3>
+          <p>Originária do Japão que envolve contato corporal completo, onde tanto o massagista quanto o cliente ficam nus e cobertos com um gel especial à base de algas, resultando em uma experiência relaxante e sensual.
+
+        </div>
+      </div>
+            <div class="servico">
+        <img src="Ventosa.jpg"  alt="Massagem ventosa" />
+        <div class="servico-content">
+          <h3>Ventosa </h3>
+          <p>Também conhecida como ventosaterapia, é uma prática terapêutica antiga que utiliza ventosas para criar sucção na pele, promovendo diversos benefícios à saúde
+
+        </div>
+      </div>
+              <div class="servico">
+        <img src="vivencia.jpg" alt="massagem vivencia"/>
+        <div class="servico-content">
+          <h3>Vivencia</h3>
+          <p>Vai além do toque físico, buscando uma conexão mais profunda com o corpo e a mente. É uma abordagem terapêutica que visa relaxar, estimular e intensificar a percepção do corpo, muitas vezes explorando o prazer de forma respeitosa e delicada. 
+
+        </div>
+      </div>
+      <div class="servico">
+        <img src="massagem-tantrica.jpg" alt="Massagem tântrica" />
+        <div class="servico-content">
+          <h3>Massagem Tântrica</h3>
+          <p>Base da massoterapia ocidental, essa massagem estimula a circulação, reduz o cansaço físico e mental e proporciona uma sensação de leveza por todo o corpo.</p>
+ 
+        </div>
+      </div>
+
+      <div class="servico">
+        <img src="massagem-classica.jpg" alt="Massagem clássica" />
+        <div class="servico-content">
+          <h3>Massagem Clássica</h3>
+          <p>Mais do que toque, é presença. Essa massagem desperta a energia vital com respeito e sensibilidade, promovendo conexão consigo mesmo(a).</p>
+
+        </div>
+      </div>
+
+      <div class="servico">
+        <img src="pedras-quentes.jpg" alt="Pedras Quentes" />
+        <div class="servico-content">
+          <h3>Pedras Quentes</h3>
+          <p>Pedras vulcânicas aquecidas são aplicadas sobre o corpo, relaxando os músculos profundamente, ativando a circulação e oferecendo um calor terapêutico revigorante.</p>
+
+        </div>
+      </div>
+
+      <div class="servico">
+        <img src="shiatsu.jpg" alt="Massagem Shiatsu" />
+        <div class="servico-content">
+          <h3>Shiatsu</h3>
+          <p>Terapia de origem japonesa que utiliza a pressão dos dedos sobre canais energéticos, promovendo alívio físico, equilíbrio emocional e revitalização da energia interior.</p>
+ 
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
