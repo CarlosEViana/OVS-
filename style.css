@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
-  background-color: #fdfaf7;
+  background-color: #d9b8a6;
   color: #4d3f36;
   overflow-x: hidden;
 }
@@ -118,11 +118,44 @@ header {
   color: #fff; /* Garante boa leitura se o fundo for escuro */
 }
 
-.pagina-servicos h2 {
-  font-size: 36px;
+
+.titulo-servicos {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
   color: #ffffff;
-  margin-bottom: 40px;
+  text-align: center;
+  margin-bottom: 2rem;
+
+  text-shadow:
+    0 0 5px #f5e7d0,
+    0 0 10px #f5e7d0,
+    0 0 20px #f5e7d0,
+    0 0 40px #f5e7d0,
+    0 0 60px #f5e7d0;
+
+  animation: brilhoIntenso 1s ease-in-out infinite alternate;
 }
+
+@keyframes brilhoIntenso {
+  0% {
+    text-shadow:
+      0 0 10px #f5e7d0,
+      0 0 20px #f5e7d0,
+      0 0 30px #f5e7d0,
+      0 0 50px #f5e7d0,
+      0 0 70px #f5e7d0;
+  }
+  100% {
+    text-shadow:
+      0 0 5px #f5e7d0,
+      0 0 15px #f5e7d0,
+      0 0 25px #f5e7d0,
+      0 0 45px #f5e7d0,
+      0 0 65px #f5e7d0;
+  }
+}
+
+
 
 .servicos-grid {
   display: grid;
@@ -347,4 +380,78 @@ header {
   border-radius: 15px;
   object-fit: cover;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+
+.espaco {
+  padding: 60px 20px;
+  background-color: #a1745c;
+  color: white;
+  text-align: center;
+}
+
+.titulo-sessao {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  text-shadow: 0 0 5px #fff;
+}
+
+.espaco-conteudo {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.bloco {
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  background-color: #fff;
+}
+
+.bloco iframe,
+.bloco img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+}
+
+.foto img {
+  transition: transform 0.4s ease;
+  will-change: transform;
+}
+
+.foto:hover img,
+.foto:active img {
+  transform: scale(1.08);
+}
+
+.mapa {
+  object-fit: cover;
+  height: 350px;
+  width: 350px;
+}
+
+.logo-img {
+  height: 80px; /* ajuste conforme necessário */
+  object-fit: contain;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.rodape {
+  background-color: #a1745c;
+  color: #3a2d26;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 14px;
+  margin-top: 60px;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
 }
